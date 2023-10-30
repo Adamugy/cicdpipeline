@@ -5,9 +5,9 @@ phases:
       - echo Logging in to Amazon ECR started on `date`
       - aws --version
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 763224569096.dkr.ecr.eu-north-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 763224569096.dkr.ecr.us-east-1.amazonaws.com
       - echo setting repository URI...
-      - REPOSITORY_URI=763224569096.dkr.ecr.eu-north-1.amazonaws.com/cicdpipeline
+      - REPOSITORY_URI=763224569096.dkr.ecr.us-east-1.amazonaws.com/cicdpipeline
       - echo setting image tag...
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
